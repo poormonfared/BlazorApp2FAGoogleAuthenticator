@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp2FA", "BlazorApp2FA\BlazorApp2FA.csproj", "{E058F867-06D3-4C1D-8CDD-5BF02FD680AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MPA2FAAPI", "MPA2FAAPI\MPA2FAAPI.csproj", "{18F9CC8A-FFB5-48B8-9D0B-7931067EBF0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E058F867-06D3-4C1D-8CDD-5BF02FD680AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E058F867-06D3-4C1D-8CDD-5BF02FD680AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E058F867-06D3-4C1D-8CDD-5BF02FD680AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E058F867-06D3-4C1D-8CDD-5BF02FD680AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18F9CC8A-FFB5-48B8-9D0B-7931067EBF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18F9CC8A-FFB5-48B8-9D0B-7931067EBF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18F9CC8A-FFB5-48B8-9D0B-7931067EBF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18F9CC8A-FFB5-48B8-9D0B-7931067EBF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BFE3B61-9EAF-431A-BCF7-858901ABAF46}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,64 @@
+﻿@page "/"
+@using BlazorApp2FA.Models
+@using BlazorApp2FA.Services
+
+<PageTitle>Google Authenticator WASM Implementation</PageTitle>
+
+<button class="btn btn-primary" @onclick="InitSetup">Setup</button>
+
+@if (showSetup)
+{
+    <div class="container">
+        <div class="row">
+            <img src="@setup2FactorAuthemticationInfo.BarCodeImageURI" style="width:200px" />
+        </div>
+        <div class="row">
+            <label>Manual Code</label> <label>@setup2FactorAuthemticationInfo.ManualCode</label>
+        </div>
+        <hr />
+        <div class="row">
+            <input type="text" @bind="challengePin" />
+            <button @onclick="Validate">Submit</button>
+
+            @if (validationReslt.HasValue)
+            {
+                if (validationReslt.Value)
+                {
+                    <div class="alert alert-success">
+                        Validated Successfully!!
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-danger">
+                        Validation is failed!!
+                    </div>
+                }
+            }
+        </div>
+    </div>
+}
+
+@code {
+    [Inject] public ITwoFAService twoFAService { get; set; }
+
+    protected bool? validationReslt = null;
+    protected bool showSetup = false;
+    protected string challengePin = string.Empty;
+    protected Setup2FactorAuthemticationInfo setup2FactorAuthemticationInfo;
+
+    public async Task InitSetup()
+    {
+        setup2FactorAuthemticationInfo = await twoFAService.Setup2FA();
+        if (setup2FactorAuthemticationInfo != null)
+        {
+            showSetup = true;
+            StateHasChanged();
+        }
+    }
+
+    public async Task Validate()
+    {
+        validationReslt = await twoFAService.Validate2FA(new Validate2FAPin { Pin = challengePin, Token4Test = setup2FactorAuthemticationInfo.Token4Test });
+    }
+}
